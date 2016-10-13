@@ -1,5 +1,7 @@
 package app.domain;
 
+import app.util.NumberUtil;
+
 public class Case 
 {
 
@@ -42,6 +44,7 @@ public class Case
 
     public void setFixedAcidity(double fixedAcidity)
     {
+        fixedAcidity = NumberUtil.toDouble(fixedAcidity, 2);
         if (fixedAcidity >= 4.6 && fixedAcidity <= 15.9)
         {
             this.fixedAcidity = fixedAcidity;
@@ -55,6 +58,7 @@ public class Case
 
     public void setVolatileAcidity(double volatileAcidity) 
     {
+        volatileAcidity = NumberUtil.toDouble(volatileAcidity, 3);
         if (volatileAcidity >= 0.12 && volatileAcidity <= 1.58)
         {
             this.volatileAcidity = volatileAcidity;
@@ -68,6 +72,7 @@ public class Case
 
     public void setCitricAcid(double citricAcid) 
     {
+        citricAcid = NumberUtil.toDouble(citricAcid, 2);
         if (citricAcid >= 0 && citricAcid <= 1)
         {
             this.citricAcid = citricAcid;
@@ -81,6 +86,7 @@ public class Case
 
     public void setResidualSugar(double residualSugar) 
     {
+        residualSugar = NumberUtil.toDouble(residualSugar, 2);
         if (residualSugar >= 0.9 && residualSugar <= 13.9)
         {
             this.residualSugar = residualSugar;
@@ -94,6 +100,7 @@ public class Case
 
     public void setChlorides(double chlorides)
     {
+        chlorides = NumberUtil.toDouble(chlorides, 3);
         if (chlorides >= 0.012 && chlorides <= 0.611)
         {
             this.chlorides = chlorides;
@@ -107,6 +114,7 @@ public class Case
 
     public void setFreeSulfurDioxide(double freeSulfurDioxide)
     {
+        freeSulfurDioxide = NumberUtil.toDouble(freeSulfurDioxide, 1);
         if (freeSulfurDioxide >= 1 && freeSulfurDioxide <= 72)
         {
             this.freeSulfurDioxide = freeSulfurDioxide;
@@ -120,6 +128,7 @@ public class Case
 
     public void setTotalSulfurDioxide(double totalSulfurDioxide)
     {
+        totalSulfurDioxide = NumberUtil.toDouble(totalSulfurDioxide, 1);
         if (totalSulfurDioxide >= 6 && totalSulfurDioxide <= 289)
         {
             this.totalSulfurDioxide = totalSulfurDioxide;
@@ -133,6 +142,7 @@ public class Case
 
     public void setDensity(double density) 
     {
+        density = NumberUtil.toDouble(density, 5);
         if (density >= 0.99 && density <= 1)
         {
             this.density = density;
@@ -146,6 +156,7 @@ public class Case
 
     public void setPh(double ph) 
     {
+        ph = NumberUtil.toDouble(ph, 2);
         if (ph >= 2.74 && ph <= 4.01)
         {
             this.ph = ph;
@@ -159,6 +170,7 @@ public class Case
 
     public void setSulphates(double sulphates)
     {
+        sulphates = NumberUtil.toDouble(sulphates, 2);
         if (sulphates >= 0.33 && sulphates <= 2)
         {
             this.sulphates = sulphates;
@@ -172,6 +184,7 @@ public class Case
 
     public void setAlcohol(double alcohol)
     {
+        alcohol = NumberUtil.toDouble(alcohol, 2);
         if (alcohol >= 8.4 && alcohol <= 14.9)
         {
             this.alcohol = alcohol;
@@ -189,6 +202,17 @@ public class Case
         {
             this.quality = quality;
         }
+    }
+
+    
+    
+    @Override
+    public String toString() 
+    {
+        return "Case{" + "fixedAcidity=" + fixedAcidity + ", volatileAcidity=" + volatileAcidity + ", citricAcid=" + citricAcid 
+                    + ", residualSugar=" + residualSugar + ", chlorides=" + chlorides + ", freeSulfurDioxide=" + freeSulfurDioxide 
+                    + ", totalSulfurDioxide=" + totalSulfurDioxide + ", density=" + density + ", ph=" + ph + ", sulphates=" + sulphates 
+                    + ", alcohol=" + alcohol + ", quality=" + quality + '}';
     }
     
 }

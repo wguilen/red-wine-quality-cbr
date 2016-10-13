@@ -43,24 +43,24 @@ public class WineQualityCbr
     
     private CaseSimilarity calculateCaseSimilaty(Case newCase, Case baseCase, CaseAttributeWeight weight)
     {
-        double calc = 0.0;
-        calc += weight.getFixedAcidity() * calculateAttributeSimilarity(newCase.getFixedAcidity(), baseCase.getFixedAcidity(), 4.6, 15.9);
-        calc += weight.getVolatileAcidity() * calculateAttributeSimilarity(newCase.getVolatileAcidity(), baseCase.getVolatileAcidity(), 0.12, 1.58);
-        calc += weight.getCitricAcid() * calculateAttributeSimilarity(newCase.getCitricAcid(), baseCase.getCitricAcid(), 0.0, 1.0);
-        calc += weight.getResidualSugar() * calculateAttributeSimilarity(newCase.getResidualSugar(), baseCase.getResidualSugar(), 0.9, 13.9);
-        calc += weight.getChlorides() * calculateAttributeSimilarity(newCase.getChlorides(), baseCase.getChlorides(), 0.012, 0.611);
-        calc += weight.getFreeSulfurDioxide() * calculateAttributeSimilarity(newCase.getFreeSulfurDioxide(), baseCase.getFreeSulfurDioxide(), 1.0, 72.0);
-        calc += weight.getTotalSulfurDioxide() * calculateAttributeSimilarity(newCase.getTotalSulfurDioxide(), baseCase.getTotalSulfurDioxide(), 6.0, 289.0);
-        calc += weight.getDensity() * calculateAttributeSimilarity(newCase.getDensity(), baseCase.getDensity(), 0.99, 1.0);
-        calc += weight.getPh() * calculateAttributeSimilarity(newCase.getPh(), baseCase.getPh(), 2.74, 4.01);
-        calc += weight.getSulphates() * calculateAttributeSimilarity(newCase.getSulphates(), baseCase.getSulphates(), 0.33, 2.0);
-        calc += weight.getAlcohol() * calculateAttributeSimilarity(newCase.getAlcohol(), baseCase.getAlcohol(), 8.4, 14.9);
-
-        return new CaseSimilarity(baseCase, calc / weight.getTotal());
+        double nearestNeighboorCalc = 0.0;
+        nearestNeighboorCalc += weight.getFixedAcidity() * calculateAttributeSimilarity(baseCase.getFixedAcidity(), newCase.getFixedAcidity(), 4.6, 15.9);
+        nearestNeighboorCalc += weight.getVolatileAcidity() * calculateAttributeSimilarity(baseCase.getVolatileAcidity(), newCase.getVolatileAcidity(), 0.12, 1.58);
+        nearestNeighboorCalc += weight.getCitricAcid() * calculateAttributeSimilarity(baseCase.getCitricAcid(), newCase.getCitricAcid(), 0.0, 1.0);
+        nearestNeighboorCalc += weight.getResidualSugar() * calculateAttributeSimilarity(baseCase.getResidualSugar(), newCase.getResidualSugar(), 0.9, 13.9);
+        nearestNeighboorCalc += weight.getChlorides() * calculateAttributeSimilarity(baseCase.getChlorides(), newCase.getChlorides(), 0.012, 0.611);
+        nearestNeighboorCalc += weight.getFreeSulfurDioxide() * calculateAttributeSimilarity(baseCase.getFreeSulfurDioxide(), newCase.getFreeSulfurDioxide(), 1.0, 72.0);
+        nearestNeighboorCalc += weight.getTotalSulfurDioxide() * calculateAttributeSimilarity(baseCase.getTotalSulfurDioxide(), newCase.getTotalSulfurDioxide(), 6.0, 289.0);
+        nearestNeighboorCalc += weight.getDensity() * calculateAttributeSimilarity(baseCase.getDensity(), newCase.getDensity(), 0.99, 1.0);
+        nearestNeighboorCalc += weight.getPh() * calculateAttributeSimilarity(baseCase.getPh(), newCase.getPh(), 2.74, 4.01);
+        nearestNeighboorCalc += weight.getSulphates() * calculateAttributeSimilarity(baseCase.getSulphates(), newCase.getSulphates(), 0.33, 2.0);
+        nearestNeighboorCalc += weight.getAlcohol() * calculateAttributeSimilarity(baseCase.getAlcohol(), newCase.getAlcohol(), 8.4, 14.9);
+        
+        return new CaseSimilarity(baseCase, nearestNeighboorCalc / weight.getTotal());
     }
     
-    private double calculateAttributeSimilarity(double newCaseAttributeValue,
-                double baseCaseAttributeValue, double maxValue, double minValue)
+    private double calculateAttributeSimilarity(double baseCaseAttributeValue, double newCaseAttributeValue, 
+            double minValue, double maxValue)
     {
         return 1.0 - Math.abs(baseCaseAttributeValue - newCaseAttributeValue) / (maxValue - minValue);
     }

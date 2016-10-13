@@ -10,6 +10,21 @@
             <Property name="text" type="java.lang.String" value="File"/>
           </Properties>
           <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="mnuProcess">
+              <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Ctrl+P"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/app/view/assets/icons/actions_32x32/process.png"/>
+                </Property>
+                <Property name="mnemonic" type="int" value="112"/>
+                <Property name="text" type="java.lang.String" value="Process"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuProcessActionPerformed"/>
+              </Events>
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuQuit">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
@@ -148,7 +163,7 @@
         <Component class="javax.swing.JSpinner" name="fixedAciditySpinner">
           <Properties>
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-              <SpinnerModel initial="4.599999904632568" maximum="15.899999618530273" minimum="4.599999904632568" numberType="java.lang.Double" stepSize="0.10000000149011612" type="number"/>
+              <SpinnerModel initial="4.6" maximum="15.9" minimum="4.6" numberType="java.lang.Double" stepSize="0.1" type="number"/>
             </Property>
           </Properties>
           <Constraints>
@@ -160,7 +175,7 @@
         <Component class="javax.swing.JSpinner" name="volatileAciditySpinner">
           <Properties>
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-              <SpinnerModel initial="0.11999999731779099" maximum="1.5800000429153442" minimum="0.11999999731779099" numberType="java.lang.Double" stepSize="0.10000000149011612" type="number"/>
+              <SpinnerModel initial="0.12" maximum="1.5800000429153442" minimum="0.12" numberType="java.lang.Double" stepSize="0.001" type="number"/>
             </Property>
           </Properties>
           <Constraints>
@@ -172,7 +187,7 @@
         <Component class="javax.swing.JSpinner" name="citricAciditySpinner">
           <Properties>
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-              <SpinnerModel initial="0.0" maximum="1.0" minimum="0.0" numberType="java.lang.Double" stepSize="0.10000000149011612" type="number"/>
+              <SpinnerModel initial="0.0" maximum="1.0" minimum="0.0" numberType="java.lang.Double" stepSize="0.01" type="number"/>
             </Property>
           </Properties>
           <Constraints>
@@ -184,7 +199,7 @@
         <Component class="javax.swing.JSpinner" name="residualSugarSpinner">
           <Properties>
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-              <SpinnerModel initial="0.8999999761581421" maximum="13.899999618530273" minimum="0.8999999761581421" numberType="java.lang.Double" stepSize="0.10000000149011612" type="number"/>
+              <SpinnerModel initial="0.8999999761581421" maximum="13.9" minimum="0.8999999761581421" numberType="java.lang.Double" stepSize="0.01" type="number"/>
             </Property>
           </Properties>
           <Constraints>
@@ -272,7 +287,7 @@
         <Component class="javax.swing.JSpinner" name="densitySpinner">
           <Properties>
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-              <SpinnerModel initial="0.9900000095367432" maximum="1.0" minimum="0.9900000095367432" numberType="java.lang.Double" stepSize="0.0010000000474974513" type="number"/>
+              <SpinnerModel initial="0.99" maximum="1.0" minimum="0.99" numberType="java.lang.Double" stepSize="0.001" type="number"/>
             </Property>
           </Properties>
           <Constraints>
@@ -338,7 +353,7 @@
         <Component class="javax.swing.JSpinner" name="alcoholSpinner">
           <Properties>
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-              <SpinnerModel initial="8.399999618530273" maximum="14.899999618530273" minimum="8.399999618530273" numberType="java.lang.Double" stepSize="0.10000000149011612" type="number"/>
+              <SpinnerModel initial="8.399999618530273" maximum="14.9" minimum="8.399999618530273" numberType="java.lang.Double" stepSize="0.01" type="number"/>
             </Property>
           </Properties>
           <Constraints>
@@ -553,6 +568,9 @@
                 <StringItem index="10" value="10"/>
               </StringArray>
             </Property>
+            <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="sulphatesSpinner"/>
+            </Property>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -579,6 +597,9 @@
                 <StringItem index="9" value="9"/>
                 <StringItem index="10" value="10"/>
               </StringArray>
+            </Property>
+            <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="btnProcess"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -651,6 +672,9 @@
             </Property>
             <Property name="mnemonic" type="int" value="112"/>
             <Property name="toolTipText" type="java.lang.String" value="Process"/>
+            <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="fixedAciditySpinner"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProcessActionPerformed"/>

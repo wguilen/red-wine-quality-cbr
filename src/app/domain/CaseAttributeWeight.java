@@ -1,5 +1,7 @@
 package app.domain;
 
+import app.util.NumberUtil;
+
 public class CaseAttributeWeight 
 {
 
@@ -22,7 +24,7 @@ public class CaseAttributeWeight
 
     public void setFixedAcidity(double fixedAcidity) 
     {
-        this.fixedAcidity = fixedAcidity;
+        this.fixedAcidity = NumberUtil.toDouble(fixedAcidity, 2);
     }
 
     public double getVolatileAcidity() 
@@ -32,7 +34,7 @@ public class CaseAttributeWeight
 
     public void setVolatileAcidity(double volatileAcidity) 
     {
-        this.volatileAcidity = volatileAcidity;
+        this.volatileAcidity = NumberUtil.toDouble(volatileAcidity, 2);
     }
 
     public double getCitricAcid() 
@@ -42,7 +44,7 @@ public class CaseAttributeWeight
 
     public void setCitricAcid(double citricAcid) 
     {
-        this.citricAcid = citricAcid;
+        this.citricAcid = NumberUtil.toDouble(citricAcid, 2);
     }
 
     public double getResidualSugar() 
@@ -52,7 +54,7 @@ public class CaseAttributeWeight
 
     public void setResidualSugar(double residualSugar) 
     {
-        this.residualSugar = residualSugar;
+        this.residualSugar = NumberUtil.toDouble(residualSugar, 2);
     }
 
     public double getChlorides() 
@@ -62,7 +64,7 @@ public class CaseAttributeWeight
 
     public void setChlorides(double chlorides) 
     {
-        this.chlorides = chlorides;
+        this.chlorides = NumberUtil.toDouble(chlorides, 2);
     }
 
     public double getFreeSulfurDioxide() 
@@ -72,7 +74,7 @@ public class CaseAttributeWeight
 
     public void setFreeSulfurDioxide(double freeSulfurDioxide) 
     {
-        this.freeSulfurDioxide = freeSulfurDioxide;
+        this.freeSulfurDioxide = NumberUtil.toDouble(freeSulfurDioxide, 2);
     }
 
     public double getTotalSulfurDioxide() 
@@ -82,7 +84,7 @@ public class CaseAttributeWeight
 
     public void setTotalSulfurDioxide(double totalSulfurDioxide) 
     {
-        this.totalSulfurDioxide = totalSulfurDioxide;
+        this.totalSulfurDioxide = NumberUtil.toDouble(totalSulfurDioxide, 2);
     }
 
     public double getDensity() 
@@ -92,7 +94,7 @@ public class CaseAttributeWeight
 
     public void setDensity(double density) 
     {
-        this.density = density;
+        this.density = NumberUtil.toDouble(density, 2);
     }
 
     public double getPh() 
@@ -102,7 +104,7 @@ public class CaseAttributeWeight
 
     public void setPh(double ph) 
     {
-        this.ph = ph;
+        this.ph = NumberUtil.toDouble(ph, 2);
     }
 
     public double getSulphates() 
@@ -112,7 +114,7 @@ public class CaseAttributeWeight
 
     public void setSulphates(double sulphates) 
     {
-        this.sulphates = sulphates;
+        this.sulphates = NumberUtil.toDouble(sulphates, 2);
     }
 
     public double getAlcohol() 
@@ -122,7 +124,7 @@ public class CaseAttributeWeight
 
     public void setAlcohol(double alcohol) 
     {
-        this.alcohol = alcohol;
+        this.alcohol = NumberUtil.toDouble(alcohol, 2);
     }
     
     public double getTotal()
@@ -130,6 +132,14 @@ public class CaseAttributeWeight
         return getAlcohol() + getChlorides() + getCitricAcid() + getDensity() + getFixedAcidity() +
                 getFreeSulfurDioxide() + getPh() + getResidualSugar() + getSulphates() + getTotalSulfurDioxide() +
                 getVolatileAcidity();
+    }
+
+    @Override
+    public String toString() 
+    {
+        return "CaseAttributeWeight{" + "fixedAcidity=" + fixedAcidity + ", volatileAcidity=" + volatileAcidity + ", citricAcid=" + citricAcid + ", residualSugar=" 
+                    + residualSugar + ", chlorides=" + chlorides + ", freeSulfurDioxide=" + freeSulfurDioxide + ", totalSulfurDioxide=" + totalSulfurDioxide + ", density=" 
+                    + density + ", ph=" + ph + ", sulphates=" + sulphates + ", alcohol=" + alcohol + '}';
     }
     
 }

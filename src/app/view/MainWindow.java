@@ -7,6 +7,8 @@ import app.util.ImageUtil;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
@@ -112,6 +114,7 @@ public class MainWindow extends JFrame
         btnProcess = new javax.swing.JButton();
         mainMnu = new javax.swing.JMenuBar();
         mnuFile = new javax.swing.JMenu();
+        mnuProcess = new javax.swing.JMenuItem();
         mnuQuit = new javax.swing.JMenuItem();
         mnuTools = new javax.swing.JMenu();
         mnuReport = new javax.swing.JMenuItem();
@@ -157,7 +160,7 @@ public class MainWindow extends JFrame
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 5, 10);
         inputPanel.add(residualSugarLabel, gridBagConstraints);
 
-        fixedAciditySpinner.setModel(new javax.swing.SpinnerNumberModel(4.599999904632568d, 4.599999904632568d, 15.899999618530273d, 0.10000000149011612d));
+        fixedAciditySpinner.setModel(new javax.swing.SpinnerNumberModel(4.6d, 4.6d, 15.9d, 0.1d));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -168,7 +171,7 @@ public class MainWindow extends JFrame
         gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 5);
         inputPanel.add(fixedAciditySpinner, gridBagConstraints);
 
-        volatileAciditySpinner.setModel(new javax.swing.SpinnerNumberModel(0.11999999731779099d, 0.11999999731779099d, 1.5800000429153442d, 0.10000000149011612d));
+        volatileAciditySpinner.setModel(new javax.swing.SpinnerNumberModel(0.12d, 0.12d, 1.5800000429153442d, 0.001d));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 1;
@@ -179,7 +182,7 @@ public class MainWindow extends JFrame
         gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 5);
         inputPanel.add(volatileAciditySpinner, gridBagConstraints);
 
-        citricAciditySpinner.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1.0d, 0.10000000149011612d));
+        citricAciditySpinner.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1.0d, 0.01d));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 1;
@@ -190,7 +193,7 @@ public class MainWindow extends JFrame
         gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 5);
         inputPanel.add(citricAciditySpinner, gridBagConstraints);
 
-        residualSugarSpinner.setModel(new javax.swing.SpinnerNumberModel(0.8999999761581421d, 0.8999999761581421d, 13.899999618530273d, 0.10000000149011612d));
+        residualSugarSpinner.setModel(new javax.swing.SpinnerNumberModel(0.8999999761581421d, 0.8999999761581421d, 13.9d, 0.01d));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 4;
@@ -263,7 +266,7 @@ public class MainWindow extends JFrame
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 5, 10);
         inputPanel.add(densityLabel, gridBagConstraints);
 
-        densitySpinner.setModel(new javax.swing.SpinnerNumberModel(0.9900000095367432d, 0.9900000095367432d, 1.0d, 0.0010000000474974513d));
+        densitySpinner.setModel(new javax.swing.SpinnerNumberModel(0.99d, 0.99d, 1.0d, 0.001d));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 5;
@@ -319,7 +322,7 @@ public class MainWindow extends JFrame
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 5, 10);
         inputPanel.add(alcoholLabel, gridBagConstraints);
 
-        alcoholSpinner.setModel(new javax.swing.SpinnerNumberModel(8.399999618530273d, 8.399999618530273d, 14.899999618530273d, 0.10000000149011612d));
+        alcoholSpinner.setModel(new javax.swing.SpinnerNumberModel(8.399999618530273d, 8.399999618530273d, 14.9d, 0.01d));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 7;
@@ -373,12 +376,14 @@ public class MainWindow extends JFrame
         inputPanel.add(densityWeightCbox, gridBagConstraints);
 
         phWeightCbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        phWeightCbox.setNextFocusableComponent(sulphatesSpinner);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 5;
         inputPanel.add(phWeightCbox, gridBagConstraints);
 
         alcoholWeightCbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        alcoholWeightCbox.setNextFocusableComponent(btnProcess);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 9;
         gridBagConstraints.gridy = 7;
@@ -401,6 +406,7 @@ public class MainWindow extends JFrame
         btnProcess.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/view/assets/icons/actions_32x32/process.png"))); // NOI18N
         btnProcess.setMnemonic('p');
         btnProcess.setToolTipText("Process");
+        btnProcess.setNextFocusableComponent(fixedAciditySpinner);
         btnProcess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProcessActionPerformed(evt);
@@ -420,6 +426,17 @@ public class MainWindow extends JFrame
 
         mnuFile.setMnemonic('f');
         mnuFile.setText("File");
+
+        mnuProcess.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        mnuProcess.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/view/assets/icons/actions_32x32/process.png"))); // NOI18N
+        mnuProcess.setMnemonic('p');
+        mnuProcess.setText("Process");
+        mnuProcess.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuProcessActionPerformed(evt);
+            }
+        });
+        mnuFile.add(mnuProcess);
 
         mnuQuit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
         mnuQuit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/view/assets/icons/actions_32x32/quit.png"))); // NOI18N
@@ -508,6 +525,10 @@ public class MainWindow extends JFrame
         }
     }//GEN-LAST:event_btnProcessActionPerformed
 
+    private void mnuProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuProcessActionPerformed
+        btnProcess.doClick();
+    }//GEN-LAST:event_mnuProcessActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel alcoholLabel;
     private javax.swing.JSpinner alcoholSpinner;
@@ -531,6 +552,7 @@ public class MainWindow extends JFrame
     private javax.swing.JPanel inputPanel;
     private javax.swing.JMenuBar mainMnu;
     private javax.swing.JMenu mnuFile;
+    private javax.swing.JMenuItem mnuProcess;
     private javax.swing.JMenuItem mnuQuit;
     private javax.swing.JMenuItem mnuReport;
     private javax.swing.JMenu mnuTools;
