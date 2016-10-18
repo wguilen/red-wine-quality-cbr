@@ -165,6 +165,7 @@
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
               <SpinnerModel initial="4.6" maximum="15.9" minimum="4.6" numberType="java.lang.Double" stepSize="0.1" type="number"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Min: 4.6 - Max: 15.9"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -177,6 +178,7 @@
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
               <SpinnerModel initial="0.12" maximum="1.5800000429153442" minimum="0.12" numberType="java.lang.Double" stepSize="0.001" type="number"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Min: 0.12 - Max: 1.58"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -189,6 +191,7 @@
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
               <SpinnerModel initial="0.0" maximum="1.0" minimum="0.0" numberType="java.lang.Double" stepSize="0.01" type="number"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Min: 0 - Max: 1"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -201,6 +204,7 @@
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
               <SpinnerModel initial="0.8999999761581421" maximum="13.9" minimum="0.8999999761581421" numberType="java.lang.Double" stepSize="0.01" type="number"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Min: 0.9 - Max: 13.9"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -223,6 +227,7 @@
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
               <SpinnerModel initial="0.012" maximum="0.611" minimum="0.012" numberType="java.lang.Double" stepSize="0.001" type="number"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Min: 0.012 - Max: 0.611"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -245,6 +250,7 @@
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
               <SpinnerModel initial="1.0" maximum="72.0" minimum="1.0" numberType="java.lang.Double" stepSize="0.5" type="number"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Min: 7 - Max: 72"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -267,6 +273,7 @@
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
               <SpinnerModel initial="6.0" maximum="289.0" minimum="6.0" numberType="java.lang.Double" stepSize="0.5" type="number"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Min: 6 - Max: 289"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -289,6 +296,7 @@
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
               <SpinnerModel initial="0.99" maximum="1.0" minimum="0.99" numberType="java.lang.Double" stepSize="0.001" type="number"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Min: 0.99 - Max: 1"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -309,8 +317,9 @@
         <Component class="javax.swing.JSpinner" name="phSpinner">
           <Properties>
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-              <SpinnerModel initial="2.740000009536743" maximum="4.010000228881836" minimum="2.740000009536743" numberType="java.lang.Double" stepSize="0.009999999776482582" type="number"/>
+              <SpinnerModel initial="2.74" maximum="4.01" minimum="2.74" numberType="java.lang.Double" stepSize="0.01" type="number"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Min: 2.74 - Max: 4.01"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -331,8 +340,9 @@
         <Component class="javax.swing.JSpinner" name="sulphatesSpinner">
           <Properties>
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-              <SpinnerModel initial="0.33000001311302185" maximum="2.0" minimum="0.33000001311302185" numberType="java.lang.Double" stepSize="0.009999999776482582" type="number"/>
+              <SpinnerModel initial="0.33" maximum="2.0" minimum="0.33" numberType="java.lang.Double" stepSize="0.01" type="number"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Min: 0.33 - Max: 2"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -355,6 +365,7 @@
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
               <SpinnerModel initial="8.399999618530273" maximum="14.9" minimum="8.399999618530273" numberType="java.lang.Double" stepSize="0.01" type="number"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Min: 8.4 - Max: 14.9"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">

@@ -35,7 +35,7 @@ public class WineQualityCbr
         
         Collections.sort(similarCases, (c1, c2) ->
         {
-            return c1.getSimilarity() > c2.getSimilarity() ? -1 : 1;
+            return c1.getSimilarity() >= c2.getSimilarity() ? -1 : 1;
         });
         
         return similarCases;
