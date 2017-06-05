@@ -15,7 +15,7 @@ public class CsvReader
         List<String[]> content = new ArrayList<>();
         
         String line = "";
-        BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/app/domain/db/winequality-red.csv")));
+        BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream(filename)));
         while (null != (line = br.readLine()))
         {
             if (!headerIgnored && ignoreHeader)

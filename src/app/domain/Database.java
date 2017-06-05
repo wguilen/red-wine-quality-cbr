@@ -11,7 +11,7 @@ public class Database
     public List<Case> load() throws IOException
     {
         List<Case> cases = new ArrayList<>();
-        List<String[]> content = new CsvReader().read("db/winequality-red.csv", true);
+        List<String[]> content = new CsvReader().read("/app/domain/db/winequality-red.csv", true);
         for (String[] tuple : content) 
         {
             Case rbcCase = new Case(
